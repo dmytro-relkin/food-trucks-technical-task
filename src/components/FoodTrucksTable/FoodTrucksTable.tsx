@@ -7,6 +7,20 @@ interface IFoodTrucksTableProps {
     data: FoodTruck[];
 }
 
+interface IFoodTruckTableRowProps {
+    item: FoodTruck;
+}
+
+const FoodTruckTableRow = React.memo(function TableRow({ item }: IFoodTruckTableRowProps) {
+    return (
+        <tr key={item.locationid}>
+            <td>{item.Applicant}</td>
+            <td>{item.Address}</td>
+            <td>{item.FoodItems}</td>
+        </tr>
+    )
+})
+
 const FoodTrucksTable: React.FC<IFoodTrucksTableProps> = ({data}) => {
     if (!data) {
         return null;
@@ -26,11 +40,7 @@ const FoodTrucksTable: React.FC<IFoodTrucksTableProps> = ({data}) => {
                 </thead>
                 <tbody>
                 {data.map(truck => (
-                    <tr key={truck.locationid}>
-                        <td>{truck.Applicant}</td>
-                        <td>{truck.Address}</td>
-                        <td>{truck.FoodItems}</td>
-                    </tr>
+                    <FoodTruckTableRow key={truck.locationid} item={truck} />
                 ))}
                 </tbody>
             </table>
