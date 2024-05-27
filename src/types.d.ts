@@ -1,0 +1,31 @@
+export interface FoodTruck {
+    locationid: number;
+    Applicant: string;
+    FacilityType: string;
+    cnn: number;
+    LocationDescription: string;
+    Address: string;
+    blocklot: string;
+    block: string;
+    lot: string;
+    permit: string;
+    Status: string;
+    FoodItems: string;
+    X: number;
+    Y: number;
+    Latitude: number;
+    Longitude: number;
+    Schedule: string;
+    dayshours: string;
+    NOISent: string;
+    Approved: string;
+    Received: number;
+    PriorPermit: number;
+    ExpirationDate: string;
+    Location: string;
+    FirePreventionDistricts: number;
+    PoliceDistricts: number;
+    SupervisorDistricts: number;
+    ZipCodes: number;
+    Neighborhoods_old: number;
+}
